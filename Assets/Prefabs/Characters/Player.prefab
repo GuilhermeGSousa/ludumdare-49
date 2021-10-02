@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 791855823268327758}
   - component: {fileID: 791855823268327757}
   - component: {fileID: 791855823268327756}
+  - component: {fileID: 8513039569993303764}
+  - component: {fileID: 7283918575345204093}
   - component: {fileID: 9111434026045928297}
   - component: {fileID: 4673305345000170293}
   - component: {fileID: 6001342937217932596}
-  - component: {fileID: 8513039569993303764}
-  - component: {fileID: 7283918575345204093}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3f84511ae3bc848af8a8377dd7ac1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 4673305345000170293}
   walkType: 0
   jumpType: 0
   groundLayerMask:
@@ -207,10 +207,43 @@ MonoBehaviour:
   groundCheckRadius: 0.08
   frontWallCheck: {fileID: 791855824333966110}
   frontWallCheckRadius: 0.08
-  walkSpeed: 2
-  maxPlayerXSpeed: 2
-  maxPlayerYSpeed: 10
+  walkSpeed: 5
+  maxPlayerXSpeed: 5
+  maxPlayerYSpeed: 20
   jumpHeight: 2
+--- !u!114 &8513039569993303764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791855823268327747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed02139eebb3dfe4bb9609e2c21c6092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMaxHealth: 10
+  onPlayerHealthChanged: {fileID: 11400000, guid: 6b6eeb25f5cc5f24d94b1fa14be17b08, type: 2}
+  onGameOver: {fileID: 11400000, guid: 6d193e521c0a4ec4c95011991150dfe4, type: 2}
+--- !u!114 &7283918575345204093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791855823268327747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc28123ddb69004e94274f7be495a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cryRecoverRate: 0.5
+  cryConsumeRate: 0.5
+  onCryEvent: {fileID: 11400000, guid: 5a5708fee272f7543acf84fe37d1a3a3, type: 2}
+  tearPrefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
+  tearRate: 30
+  cryThrust: 10
 --- !u!50 &9111434026045928297
 Rigidbody2D:
   serializedVersion: 4
@@ -277,39 +310,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8513039569993303764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791855823268327747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed02139eebb3dfe4bb9609e2c21c6092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaxHealth: 10
-  onPlayerHealthChanged: {fileID: 11400000, guid: 6b6eeb25f5cc5f24d94b1fa14be17b08, type: 2}
-  onGameOver: {fileID: 11400000, guid: 6d193e521c0a4ec4c95011991150dfe4, type: 2}
---- !u!114 &7283918575345204093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791855823268327747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc28123ddb69004e94274f7be495a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cryRecoverRate: 0.5
-  cryConsumeRate: 0.5
-  onCryEvent: {fileID: 11400000, guid: 5a5708fee272f7543acf84fe37d1a3a3, type: 2}
-  tearPrefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
-  tearRate: 30
-  cryThrust: 10
 --- !u!1 &791855824333966109
 GameObject:
   m_ObjectHideFlags: 0
