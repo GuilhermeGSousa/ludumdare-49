@@ -14,8 +14,8 @@ TagManager:
   - Fluid
   - Player
   - Ground
-  - 
-  - 
+  - Enemy
+  - FluidEffect
   - 
   - 
   - 
