@@ -20,9 +20,9 @@ public class Player : MonoBehaviour, IDamageable
 
     public void OnAttack(InputAction.CallbackContext value)
     {
-        if(value.performed) playerCry.StartCrying();
+        if(value.performed) playerCry.SetCrying(true);
 
-        if(value.canceled) playerCry.StopCrying();
+        if(value.canceled) playerCry.SetCrying(false);
     }
 
     public void OnJump(InputAction.CallbackContext value)
@@ -41,5 +41,17 @@ public class Player : MonoBehaviour, IDamageable
     public void OnDamage(float damage)
     {
         playerHealth.ApplyDamage(damage);
+    }
+
+    public void onCryStateChanged(bool cryState)
+    {
+        if(cryState)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 }

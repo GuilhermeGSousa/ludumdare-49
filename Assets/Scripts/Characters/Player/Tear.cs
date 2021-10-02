@@ -25,10 +25,13 @@ public class Tear : MonoBehaviour
     {
         if(other.CompareTag("Player")) return;
 
+        Enemy enemy = other.GetComponent<Enemy>();
+        if(enemy) enemy.SetSlow(true);
+
         int rng =  Random.Range(0, 100);
         
         if(effectOdds < rng) return;
-        Debug.Log(rng);
+        
         IDamageable damageable = other.GetComponent<IDamageable>();
         IPushable pushable = other.GetComponent<IPushable>();
 
@@ -44,5 +47,13 @@ public class Tear : MonoBehaviour
         }
 
         if(pushable is IPushable || damageable is IDamageable) Destroy(transform.gameObject);
+    }
+
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.CompareTag("Player")) return;
+
+        Enemy enemy = other.GetComponent<Enemy>();
+        if(enemy) enemy.SetSlow(false);
     }
 }

@@ -240,6 +240,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc28123ddb69004e94274f7be495a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCryStateChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 791855823268327758}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: onCryStateChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   cryRecoverRate: 0.5
   cryConsumeRate: 0.05
   onCryEvent: {fileID: 11400000, guid: 5a5708fee272f7543acf84fe37d1a3a3, type: 2}
@@ -248,7 +263,7 @@ MonoBehaviour:
   initialTearSpeed: 3
   tearPrefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
   tearRate: 30
-  cryThrust: 10
+  cryThrust: 20
 --- !u!50 &9111434026045928297
 Rigidbody2D:
   serializedVersion: 4

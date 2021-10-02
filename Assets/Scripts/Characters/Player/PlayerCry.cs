@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class PlayerCry : MonoBehaviour
 {
+    [SerializeField] private UnityEvent<bool> onCryStateChanged;
     [Header("Cry amount")]
     [SerializeField] private float cryRecoverRate = 0.01f;
     [SerializeField] private float cryConsumeRate = 0.01f;
@@ -16,7 +17,8 @@ public class PlayerCry : MonoBehaviour
     [SerializeField] private float initialTearSpeed = 3f;
     [SerializeField] private GameObject tearPrefab;
     [SerializeField] private float tearRate = 30f;
-    private bool isCrying = false;
+    private bool isCrying = true;
+    private bool isCryingInput = false;
     private float waitedTime = 0;
 
     [Header("Cry flying")]
@@ -26,10 +28,12 @@ public class PlayerCry : MonoBehaviour
     private void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
+
+        onCryStateChanged.Invoke(isCrying);
     }
     private void Update()
     {
-        if(isCrying && cryAmount > 0)
+        if(isCrying && isCryingInput && cryAmount > 0)
         {
             if(waitedTime > 1 / tearRate)
             {
@@ -47,30 +51,37 @@ public class PlayerCry : MonoBehaviour
             }
             cryAmount -= Time.deltaTime * cryConsumeRate;
             onCryEvent.Raise(cryAmount);
+
+            if(cryAmount <= 0)
+            {
+                isCrying = false;
+                onCryStateChanged.Invoke(isCrying);
+            }
         }
         else if (!isCrying && cryAmount < 1.0f)
         {
             cryAmount += Time.deltaTime * cryRecoverRate;
             onCryEvent.Raise(cryAmount);
+
+            if(cryAmount >= 1f)
+            {
+                isCrying = true;
+                onCryStateChanged.Invoke(isCrying);
+            }
         }
     }
 
     private void FixedUpdate() 
     {
-        if(isCrying && cryAmount > 0)
+        if(isCryingInput && cryAmount > 0)
         {
             rb.AddForce(transform.up * cryThrust);
         }
         
     }
 
-    public void StartCrying()
+    public void SetCrying(bool cry)
     {
-        isCrying = true;
-    }
-
-    public void StopCrying()
-    {
-        isCrying = false;
+        isCryingInput = cry;
     }
 }

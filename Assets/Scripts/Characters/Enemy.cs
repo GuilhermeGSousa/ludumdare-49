@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
 {
     [SerializeField] private float health = 5f;
     [SerializeField] private float speed  = 3f;
+    private float currentSpeed;
     [SerializeField] private float minDistanceToPlayer = 0.1f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayerMask;
@@ -17,10 +18,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     private GameObject player;
     private bool isFlipped = false;
     private bool isGrounded = false;
-
+    private bool isSlowed = false;
     // Start is called before the first frame update
     void Start()
     {
+        currentSpeed = speed;
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
     }
@@ -45,7 +47,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
 
         if(!isCloseToPlayer)
         {
-            transform.position += transform.right * speed * Time.deltaTime;   
+            transform.position += transform.right * (isSlowed ? speed * 0.5f : speed) * Time.deltaTime;   
         }
     }
 
@@ -73,6 +75,12 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
             Destroy(gameObject);
         }
     }
+
+    public void SetSlow(bool isSlow)
+    {
+        isSlowed = isSlow;
+    }
+    
 
     public void OnPush(Vector2 pushImpulse)
     {
