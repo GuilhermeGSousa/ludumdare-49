@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 791855823268327756}
   - component: {fileID: 9111434026045928297}
   - component: {fileID: 4673305345000170293}
-  - component: {fileID: 1722579840164990606}
   - component: {fileID: 6001342937217932596}
   - component: {fileID: 8513039569993303764}
+  - component: {fileID: 7283918575345204093}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 791855823268327756}
   playerHealth: {fileID: 8513039569993303764}
-  instantiator: {fileID: 1722579840164990606}
+  playerCry: {fileID: 7283918575345204093}
 --- !u!114 &791855823268327757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +208,9 @@ MonoBehaviour:
   frontWallCheck: {fileID: 791855824333966110}
   frontWallCheckRadius: 0.08
   walkSpeed: 2
-  maxPlayerSpeed: 2
-  jumpHeight: 1
+  maxPlayerXSpeed: 2
+  maxPlayerYSpeed: 10
+  jumpHeight: 2
 --- !u!50 &9111434026045928297
 Rigidbody2D:
   serializedVersion: 4
@@ -250,20 +251,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1722579840164990606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791855823268327747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83d5f97e24541e4fb939aad3e88e4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
-  instantiateRate: 30
 --- !u!61 &6001342937217932596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,6 +292,24 @@ MonoBehaviour:
   playerMaxHealth: 10
   onPlayerHealthChanged: {fileID: 11400000, guid: 6b6eeb25f5cc5f24d94b1fa14be17b08, type: 2}
   onGameOver: {fileID: 11400000, guid: 6d193e521c0a4ec4c95011991150dfe4, type: 2}
+--- !u!114 &7283918575345204093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791855823268327747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc28123ddb69004e94274f7be495a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cryRecoverRate: 0.5
+  cryConsumeRate: 0.5
+  onCryEvent: {fileID: 11400000, guid: 5a5708fee272f7543acf84fe37d1a3a3, type: 2}
+  tearPrefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
+  tearRate: 30
+  cryThrust: 10
 --- !u!1 &791855824333966109
 GameObject:
   m_ObjectHideFlags: 0

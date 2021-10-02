@@ -46,7 +46,6 @@ public class HealthUI : MonoBehaviour, IEventListener<float>
 
     public void SetHealth(float health)
     {
-        Debug.Log("Setting health to " + health);
         currentHearts = health;
         currentContainer.SetHealth(health);
     }

@@ -31,7 +31,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     [Header("Walking Movement")]
     [SerializeField] private float walkSpeed = 0.1f;
-    [SerializeField] private float maxPlayerSpeed = 2f;
+    [SerializeField] private float maxPlayerXSpeed = 2f;
+    [SerializeField] private float maxPlayerYSpeed = 10f;
 
     [Header("Jumping Movement")]
     [SerializeField] private float jumpHeight = 1f;
@@ -106,7 +107,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
         animator.SetTrigger("onJump");
 
-        // Maybe jum on animation?
+        // Maybe jump on animation?
         
         switch (jumpType)
         {
@@ -137,10 +138,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void LimitSpeed()
     {
-        if(Mathf.Abs(rb.velocity.x) > maxPlayerSpeed)
-        {
-            rb.velocity = new Vector2(maxPlayerSpeed * Mathf.Sign(rb.velocity.x), rb.velocity.y);
-        }
+        rb.velocity = new Vector2(
+            Mathf.Clamp(Mathf.Abs(rb.velocity.x), 0, maxPlayerXSpeed) * Mathf.Sign(rb.velocity.x),
+            Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0, maxPlayerYSpeed) * Mathf.Sign(rb.velocity.y)
+            );
     }
 
     private void OnDrawGizmos() 

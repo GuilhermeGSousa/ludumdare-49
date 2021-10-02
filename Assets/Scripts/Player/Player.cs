@@ -9,7 +9,7 @@ public class Player : MonoBehaviour, IDamageable
 {
     [SerializeField] private PlayerMovementBehaviour playerMovement;
     [SerializeField] private PlayerHealth playerHealth;
-    [SerializeField] private Instantiator instantiator;
+    [SerializeField] private PlayerCry playerCry;
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -20,9 +20,9 @@ public class Player : MonoBehaviour, IDamageable
 
     public void OnAttack(InputAction.CallbackContext value)
     {
-        if(value.performed) instantiator.StartInstantiate();
+        if(value.performed) playerCry.StartCrying();
 
-        if(value.canceled) instantiator.StopInstantiate();
+        if(value.canceled) playerCry.StopCrying();
     }
 
     public void OnJump(InputAction.CallbackContext value)
@@ -40,6 +40,6 @@ public class Player : MonoBehaviour, IDamageable
 
     public void OnDamage(float damage)
     {
-        
+        playerHealth.ApplyDamage(damage);
     }
 }

@@ -37,12 +37,10 @@ public class Instantiator : MonoBehaviour
     public void StartInstantiate()
     {
         canInstantiate = true;
-        Debug.Log("Start");
     }
 
     public void StopInstantiate()
     {
         canInstantiate = false;
-        Debug.Log("Stop");
     }
 }
