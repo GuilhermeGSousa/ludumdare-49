@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730e57bbc35f48e4fb54f5dbc6ff6afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 3.1
+  damageAmount: 0.5
+  pushImpulse: 10
+  pushAngle: 45
   onCollision: 0
   onTrigger: 1
 --- !u!61 &1833158776862110157
@@ -57,7 +59,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -137,7 +139,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -205,7 +207,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -314,8 +316,8 @@ MonoBehaviour:
   - {fileID: 5111631745036227785}
   - {fileID: 5111631745787319357}
   m_Bounds:
-    m_Center: {x: -2.5031996, y: 2.680402, z: 0}
-    m_Extent: {x: 2.9836483, y: 3.0674493, z: 0}
+    m_Center: {x: 3.3310978, y: 3.3074267, z: 0}
+    m_Extent: {x: 3.7405162, y: 3.7193353, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744297969626
@@ -382,7 +384,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -491,8 +493,8 @@ MonoBehaviour:
   - {fileID: 5111631744042553626}
   - {fileID: 5111631744706178379}
   m_Bounds:
-    m_Center: {x: 4.5359216, y: 0.25223368, z: 0}
-    m_Extent: {x: 4.9395556, y: 0.9448022, z: 0}
+    m_Center: {x: 3.2685127, y: 3.367422, z: 0}
+    m_Extent: {x: 3.6796825, y: 3.776464, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744412638099
@@ -559,7 +561,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -627,7 +629,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -695,7 +697,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -735,6 +737,7 @@ Transform:
   - {fileID: 5111631744265660842}
   - {fileID: 2003881658386567773}
   - {fileID: 4936512651791981023}
+  - {fileID: 936494003517465858}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -817,7 +820,7 @@ AudioSource:
   m_GameObject: {fileID: 5111631744670974862}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a61a0f294f8baf14894dbe7b121278ef, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -916,6 +919,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232f908993fb6324e9cfd8fdcf389811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goonPrefab: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
+  spitPoint: {fileID: 936494003517465858}
+  spitInitialVelocity: 8
+  bossAudioSource: {fileID: 1738093877939396331}
+  laughAudioClips:
+  - {fileID: 8300000, guid: 8f9df2333c3c76f42abe0e678376a648, type: 3}
+  - {fileID: 8300000, guid: a217687e733e185479fb498d09f12f2b, type: 3}
+  - {fileID: 8300000, guid: 4f672457b29a5964d99054c1b04b1e75, type: 3}
+  damagedAudioClips:
+  - {fileID: 8300000, guid: 4c8ddae2f55e05b4fb1fd0f6a9dc899e, type: 3}
+  - {fileID: 8300000, guid: b5072c2d09ebf1a4e8b057d4eed61fa7, type: 3}
+  - {fileID: 8300000, guid: 012c1f69cf58ab54e9feac3870c38ccb, type: 3}
 --- !u!114 &5353720968564126177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,7 +1008,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1061,7 +1076,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1129,7 +1144,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1197,7 +1212,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1265,7 +1280,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1332,7 +1347,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 140
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1380,7 +1395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730e57bbc35f48e4fb54f5dbc6ff6afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 3.1
+  damageAmount: 0.5
+  pushImpulse: 10
+  pushAngle: 135
   onCollision: 0
   onTrigger: 1
 --- !u!61 &7481230403352619494
@@ -1393,7 +1410,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1409,3 +1426,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &7821665286299609714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936494003517465858}
+  m_Layer: 0
+  m_Name: SpitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936494003517465858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7821665286299609714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5111631744670974856}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

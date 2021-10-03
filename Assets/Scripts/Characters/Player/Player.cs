@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
-public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
+public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushable
 {
     [SerializeField] private PlayerMovementBehaviour playerMovement;
     [SerializeField] private PlayerHealth playerHealth;
@@ -145,5 +145,10 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
         {
             Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
         }        
+    }
+
+    public void OnPush(Vector2 pushImpulse)
+    {
+        GetComponent<Rigidbody2D>().AddForce(pushImpulse, ForceMode2D.Impulse);
     }
 }

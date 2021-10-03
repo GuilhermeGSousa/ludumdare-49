@@ -5,6 +5,8 @@ using UnityEngine;
 public class DamageCollider : MonoBehaviour
 {
     [SerializeField] private float damageAmount = 3.1f;
+    [SerializeField] private float pushImpulse = 5f;
+    [SerializeField] private float pushAngle = 45f;
 
     [SerializeField] private bool onCollision = true;
     [SerializeField] private bool onTrigger = true;
@@ -25,10 +27,16 @@ public class DamageCollider : MonoBehaviour
         if(!onTrigger) return;
         
         IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+        IPushable pushable = other.gameObject.GetComponent<IPushable>();
 
         if(damageable is IDamageable)
         {
             damageable.OnDamage(damageAmount);
+        }
+
+        if(pushable is IPushable)
+        {
+            pushable.OnPush(Quaternion.Euler(0f, 0f, pushAngle) * transform.right * pushImpulse);
         }
     }
 }
