@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     private bool isFlipped = false;
     private bool isGrounded = false;
     private bool isSlowed = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +70,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     {
         health -= damage;
 
+        
+        StartCoroutine("OnDamageCoroutine");
+
         if(health <= 0) 
         {
             onDeath.Invoke();
@@ -93,6 +97,20 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         {
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }        
+    }
+
+    IEnumerator OnDamageCoroutine()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        float ElapsedTime = 0.0f;
+        float TotalTime = 0.5f;
+        while (ElapsedTime < TotalTime) 
+        {
+            ElapsedTime += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(Color.red, Color.white, (ElapsedTime / TotalTime));
+            yield return null;
+        }
     }
 
 

@@ -40,6 +40,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
             {
                 animator.SetBool("isCrying", true);
                 playerCry.SetCrying(true);
+                playerSFX.PlayCry();
             }
 
             if(value.canceled)
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
         {
             animator.SetBool("isCrying", false);
             animator.SetTrigger("onAngry");
+            playerSFX.StopCry();
         }
 
         isSad = cryState;
