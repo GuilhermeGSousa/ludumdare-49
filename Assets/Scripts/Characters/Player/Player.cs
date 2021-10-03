@@ -10,7 +10,12 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private PlayerMovementBehaviour playerMovement;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerCry playerCry;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius = 2f;
+    [SerializeField] private float attackDamage = 2f;
+    [SerializeField] private float pushImpulse = 2f;
 
+    private bool isSad = true;
     public void OnMovement(InputAction.CallbackContext value)
     {
         float inputMovement = value.ReadValue<float>();
@@ -20,9 +25,37 @@ public class Player : MonoBehaviour, IDamageable
 
     public void OnAttack(InputAction.CallbackContext value)
     {
-        if(value.performed) playerCry.SetCrying(true);
+        if(isSad)
+        {
+            if(value.performed) playerCry.SetCrying(true);
 
-        if(value.canceled) playerCry.SetCrying(false);
+            if(value.canceled) playerCry.SetCrying(false);
+        }
+        else
+        {
+            AttackOnPoint();
+        }
+        
+    }
+
+    private void AttackOnPoint()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
+
+        foreach (var collider in colliders)
+        {
+            if(collider.CompareTag("Player")) continue;
+
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+            IPushable pushable = collider.GetComponent<IPushable>();
+            if(damageable is IDamageable) damageable.OnDamage(attackDamage);
+            if(pushable is IPushable)
+            {
+                Vector2 pushImpulseVector = (collider.transform.position - transform.position).normalized * pushImpulse;
+                float rotationAngle = 45f;
+                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Cos(rotationAngle), Mathf.Sign(rotationAngle)) * pushImpulse);
+            } 
+        }
     }
 
     public void OnJump(InputAction.CallbackContext value)
@@ -45,6 +78,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void onCryStateChanged(bool cryState)
     {
+        isSad = cryState;
         if(cryState)
         {
             GetComponent<SpriteRenderer>().color = Color.white;
@@ -53,5 +87,13 @@ public class Player : MonoBehaviour, IDamageable
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
+    }
+
+    private void OnDrawGizmos() 
+    {
+        if(attackPoint)
+        {
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }        
     }
 }

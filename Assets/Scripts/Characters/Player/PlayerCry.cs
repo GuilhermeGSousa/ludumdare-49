@@ -60,6 +60,7 @@ public class PlayerCry : MonoBehaviour
         }
         else if (!isCrying && cryAmount < 1.0f)
         {
+            isCryingInput = false;
             cryAmount += Time.deltaTime * cryRecoverRate;
             onCryEvent.Raise(cryAmount);
 
@@ -73,7 +74,7 @@ public class PlayerCry : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(isCryingInput && cryAmount > 0)
+        if(isCrying && isCryingInput && cryAmount > 0)
         {
             rb.AddForce(transform.up * cryThrust);
         }
