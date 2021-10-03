@@ -14,8 +14,13 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private float attackRadius = 2f;
     [SerializeField] private float attackDamage = 2f;
     [SerializeField] private float pushImpulse = 2f;
-
+    [SerializeField] private Animator animator;
     private bool isSad = true;
+    
+    private void Start() 
+    {
+        animator.GetComponent<Animator>();
+    }
     public void OnMovement(InputAction.CallbackContext value)
     {
         float inputMovement = value.ReadValue<float>();
@@ -27,9 +32,17 @@ public class Player : MonoBehaviour, IDamageable
     {
         if(isSad)
         {
-            if(value.performed) playerCry.SetCrying(true);
+            if(value.performed) 
+            {
+                animator.SetBool("isCrying", true);
+                playerCry.SetCrying(true);
+            }
 
-            if(value.canceled) playerCry.SetCrying(false);
+            if(value.canceled)
+            {
+                animator.SetBool("isCrying", false);
+                playerCry.SetCrying(false);
+            }
         }
         else
         {
@@ -85,6 +98,7 @@ public class Player : MonoBehaviour, IDamageable
         }
         else
         {
+            animator.SetBool("isCrying", false);
             GetComponent<SpriteRenderer>().color = Color.red;
         }
     }

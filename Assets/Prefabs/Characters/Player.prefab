@@ -114,6 +114,7 @@ MonoBehaviour:
   attackRadius: 2
   attackDamage: 1
   pushImpulse: 1
+  animator: {fileID: 4673305345000170293}
 --- !u!114 &791855823268327757
 MonoBehaviour:
   m_ObjectHideFlags: 0
