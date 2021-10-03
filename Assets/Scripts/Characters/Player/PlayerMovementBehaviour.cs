@@ -128,7 +128,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayerMask);
 
-        //animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("isGrounded", isGrounded);
     }
     
     private float ComputeJumpImpulse()

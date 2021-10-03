@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
     [SerializeField] private float attackRadius = 2f;
     [SerializeField] private float attackDamage = 2f;
     [SerializeField] private float pushImpulse = 2f;
+    [SerializeField] private float pushAngle = 20f;
     [SerializeField] private Animator animator;
     [SerializeField] private GameEvent<bool> gamePauseEvent;
     private bool isSad = true;
@@ -47,12 +48,15 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
         }
         else
         {
-            AttackOnPoint();
+            if(value.started) 
+            {
+                animator.SetTrigger("onAttack");
+            }
         }
         
     }
-    
-    private void AttackOnPoint()
+
+    public void Attack()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
 
@@ -62,12 +66,11 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
 
             IDamageable damageable = collider.GetComponent<IDamageable>();
             IPushable pushable = collider.GetComponent<IPushable>();
+
             if(damageable is IDamageable) damageable.OnDamage(attackDamage);
             if(pushable is IPushable)
             {
-                Vector2 pushImpulseVector = (collider.transform.position - transform.position).normalized * pushImpulse;
-                float rotationAngle = 45f;
-                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Cos(rotationAngle), Mathf.Sign(rotationAngle)) * pushImpulse);
+                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Sin(pushAngle), Mathf.Cos(pushAngle)) * pushImpulse);
             } 
         }
     }
@@ -92,16 +95,18 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
 
     public void onCryStateChanged(bool cryState)
     {
-        isSad = cryState;
+        
         if(cryState)
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            if(!isSad) animator.SetTrigger("onSad");
         }
         else
         {
             animator.SetBool("isCrying", false);
-            GetComponent<SpriteRenderer>().color = Color.red;
+            animator.SetTrigger("onAngry");
         }
+
+        isSad = cryState;
     }
 
     private void OnEnable() {
