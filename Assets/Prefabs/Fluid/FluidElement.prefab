@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6fce493b06e5d34aa70ce4b2cf8d909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
   pushImpulse: 5
   effectOdds: 1
 --- !u!1 &4856357394002456203
@@ -137,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 693161805
   m_SortingLayer: -1
-  m_SortingOrder: 100
+  m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: b53c224115e48e74b8f694e66f361749, type: 3}
   m_Color: {r: 0.09868276, g: 0.4602699, b: 0.7264151, a: 1}
   m_FlipX: 0
