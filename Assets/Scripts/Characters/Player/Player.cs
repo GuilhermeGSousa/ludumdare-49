@@ -10,6 +10,8 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
     [SerializeField] private PlayerMovementBehaviour playerMovement;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerCry playerCry;
+    [SerializeField] private PlayerCameraShaker playerCameraShaker;
+    [SerializeField] private PlayerSFX playerSFX;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius = 2f;
     [SerializeField] private float attackDamage = 2f;
@@ -67,7 +69,14 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
             IDamageable damageable = collider.GetComponent<IDamageable>();
             IPushable pushable = collider.GetComponent<IPushable>();
 
-            if(damageable is IDamageable) damageable.OnDamage(attackDamage);
+            if(damageable is IDamageable) 
+            {
+                damageable.OnDamage(attackDamage);
+
+                playerCameraShaker.Shake();
+
+                playerSFX.PlayHitSFX();
+            }
             if(pushable is IPushable)
             {
                 pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Sin(pushAngle), Mathf.Cos(pushAngle)) * pushImpulse);
