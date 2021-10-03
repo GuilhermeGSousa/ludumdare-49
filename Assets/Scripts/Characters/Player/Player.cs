@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
-public class Player : MonoBehaviour, IDamageable
+public class Player : MonoBehaviour, IDamageable, IEventListener<bool>
 {
     [SerializeField] private PlayerMovementBehaviour playerMovement;
     [SerializeField] private PlayerHealth playerHealth;
@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private float attackDamage = 2f;
     [SerializeField] private float pushImpulse = 2f;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameEvent<bool> gamePauseEvent;
     private bool isSad = true;
     
     private void Start() 
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour, IDamageable
         }
         
     }
-
+    
     private void AttackOnPoint()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
@@ -103,6 +104,25 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+    private void OnEnable() {
+        gamePauseEvent.RegisterListener(this);
+    }
+
+    private void OnDisable() {
+        gamePauseEvent.UnregisterListener(this);
+    }
+
+    public void OnEventRaised(bool parameter)
+    {
+        if(parameter)
+        {            
+            GetComponent<PlayerInput>().actions.FindActionMap("Movement").Disable();
+        }
+        else
+        {
+            GetComponent<PlayerInput>().actions.FindActionMap("Movement").Enable();
+        }
+    }
     private void OnDrawGizmos() 
     {
         if(attackPoint)
