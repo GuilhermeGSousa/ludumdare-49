@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour, IDamageable
 {
+    [SerializeField] private GameEvent<float> onDamagedEvent;
+    [SerializeField] private GameEvent onDeath;
+    [SerializeField] private float maxHealth = 20f;
+    private float health;
     [SerializeField] private GameObject goonPrefab;
     [SerializeField] private Transform spitPoint;
     [SerializeField] private float spitInitialVelocity = 8f;
     [SerializeField] private AudioSource bossAudioSource;
     [SerializeField] private List<AudioClip> laughAudioClips;
     [SerializeField] private List<AudioClip> damagedAudioClips;
-    private int hitCount;
+    [SerializeField] private Color damagedColor;
 
     private string[] actionList = {
         "spitGoons",
@@ -22,6 +26,9 @@ public class Boss : MonoBehaviour, IDamageable
     private void Start() {
         animator = GetComponent<Animator>();
         bossAudioSource.loop = false;
+
+        health = maxHealth;
+        onDamagedEvent.Raise(1f);
     }
 
     public void ChooseNextAction()
@@ -47,14 +54,35 @@ public class Boss : MonoBehaviour, IDamageable
     {
         bossAudioSource.PlayOneShot(damagedAudioClips[Random.Range(0, damagedAudioClips.Count)]);
     }
-
-    public void CountHit()
-    {
-        hitCount++;
-    }
-
     public void OnDamage(float damage)
     {
+        health -= damage;
+        onDamagedEvent.Raise(health / maxHealth);
+        animator.SetTrigger("damaged");
+        StartCoroutine("OnDamageCoroutine");
 
+        if(health <= 0)
+        {
+            animator.SetTrigger("dead");
+        }
+    }
+
+    public void OnBossDeath()
+    {
+        onDeath.Raise();
+    }
+
+    IEnumerator OnDamageCoroutine()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        float ElapsedTime = 0.0f;
+        float TotalTime = 0.2f;
+        while (ElapsedTime < TotalTime) 
+        {
+            ElapsedTime += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(damagedColor, Color.white, (ElapsedTime / TotalTime));
+            yield return null;
+        }
     }
 }

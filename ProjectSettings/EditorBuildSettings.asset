@@ -17,5 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Game Over Scene.unity
     guid: 321cc1f086292c844be308d6d2af7cee
+  - enabled: 1
+    path: Assets/Scenes/Game/End Cutscene.unity
+    guid: 101cb5f7b61664d42b1a8bce37e88a7f
+  - enabled: 1
+    path: Assets/Scenes/Game/End Scene.unity
+    guid: ef1a22975d161494088a7b995c2a726e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1507bfeca13df074ca384ad2364e8721, type: 2}

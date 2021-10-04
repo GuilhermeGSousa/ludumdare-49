@@ -316,8 +316,8 @@ MonoBehaviour:
   - {fileID: 5111631745036227785}
   - {fileID: 5111631745787319357}
   m_Bounds:
-    m_Center: {x: 3.3310978, y: 3.3074267, z: 0}
-    m_Extent: {x: 3.7405162, y: 3.7193353, z: 0}
+    m_Center: {x: 3.331098, y: 3.3074267, z: 0}
+    m_Extent: {x: 3.7405164, y: 3.7193353, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744297969626
@@ -493,8 +493,8 @@ MonoBehaviour:
   - {fileID: 5111631744042553626}
   - {fileID: 5111631744706178379}
   m_Bounds:
-    m_Center: {x: 3.2685127, y: 3.367422, z: 0}
-    m_Extent: {x: 3.6796825, y: 3.776464, z: 0}
+    m_Center: {x: 3.268513, y: 3.3674216, z: 0}
+    m_Extent: {x: 3.6796827, y: 3.7764637, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744412638099
@@ -715,7 +715,8 @@ GameObject:
   - component: {fileID: 1738093877939396331}
   - component: {fileID: 3985796594871132003}
   - component: {fileID: 5353720968564126177}
-  m_Layer: 0
+  - component: {fileID: 4856815332872629406}
+  m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,9 +917,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5111631744670974862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232f908993fb6324e9cfd8fdcf389811, type: 3}
+  m_Script: {fileID: 11500000, guid: d0787200b77b2034b97196e76df18b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDamagedEvent: {fileID: 11400000, guid: a61ac37085bd8a144b4a328f43f696c0, type: 2}
+  onDeath: {fileID: 11400000, guid: 4a588a88b6724fc4881810ab1a4c869b, type: 2}
+  maxHealth: 20
   goonPrefab: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
   spitPoint: {fileID: 936494003517465858}
   spitInitialVelocity: 8
@@ -931,6 +935,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4c8ddae2f55e05b4fb1fd0f6a9dc899e, type: 3}
   - {fileID: 8300000, guid: b5072c2d09ebf1a4e8b057d4eed61fa7, type: 3}
   - {fileID: 8300000, guid: 012c1f69cf58ab54e9feac3870c38ccb, type: 3}
+  damagedColor: {r: 0.8301887, g: 0.25516164, b: 0.06657174, a: 0}
 --- !u!114 &5353720968564126177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +950,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeTime: 1
   shakeIntensity: 15
+--- !u!61 &4856815332872629406
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111631744670974862}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.30096367, y: 2.8333755}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 21.428572, y: 21.428572}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3886046, y: 6.7795477}
+  m_EdgeRadius: 0
 --- !u!1 &5111631744706178378
 GameObject:
   m_ObjectHideFlags: 0

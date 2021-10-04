@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1261958520133910165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3215083917214623700}
+  - component: {fileID: 5337858028040622061}
+  m_Layer: 0
+  m_Name: GameOverListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3215083917214623700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261958520133910165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5548667253337380260}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5337858028040622061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261958520133910165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37d1a798dfb9c846b5eae4b475c7018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGameOver: {fileID: 11400000, guid: 6d193e521c0a4ec4c95011991150dfe4, type: 2}
+  sceneSwitcher: {fileID: 6965607971314089510}
 --- !u!1 &2131408634876468723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +54,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5548667253337380260}
-  - component: {fileID: 8855012541347237079}
   - component: {fileID: 6965607971314089510}
   m_Layer: 0
   m_Name: GM
@@ -28,24 +72,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 942.6142, y: 129.36554, z: -110.144226}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3215083917214623700}
+  - {fileID: 4195097531971752441}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8855012541347237079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131408634876468723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37d1a798dfb9c846b5eae4b475c7018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onGameOver: {fileID: 11400000, guid: 6d193e521c0a4ec4c95011991150dfe4, type: 2}
-  sceneSwitcher: {fileID: 6965607971314089510}
 --- !u!114 &6965607971314089510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +90,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6f8c6eff5e88b4997989893005cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3946556262575037030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4195097531971752441}
+  - component: {fileID: 8065128738534066655}
+  m_Layer: 0
+  m_Name: BossDeathListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4195097531971752441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946556262575037030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5548667253337380260}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8065128738534066655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946556262575037030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7222226fd35b29c41935ffc95c3b0fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBossDeath: {fileID: 11400000, guid: 4a588a88b6724fc4881810ab1a4c869b, type: 2}
+  sceneSwitcher: {fileID: 6965607971314089510}

@@ -124,6 +124,7 @@ MonoBehaviour:
   pushAngle: 45
   animator: {fileID: 4673305345000170293}
   gamePauseEvent: {fileID: 11400000, guid: 732fdba007cdc5b4b81b63f9021fa1ec, type: 2}
+  damagedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &791855823268327757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 791855825212191612}
-  groundCheckRadius: 0.08
+  groundCheckRadius: 0.56
   frontWallCheck: {fileID: 791855824333966110}
   frontWallCheckRadius: 0.08
   walkSpeed: 5
@@ -331,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49445507399ab3e4cae6e56fc16a0708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeTime: 0.1
-  shakeIntensity: 10
+  shakeTime: 0
+  shakeIntensity: 0
 --- !u!50 &9111434026045928297
 Rigidbody2D:
   serializedVersion: 4
@@ -661,7 +662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791855825212191603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.196, y: -1.429, z: 0}
+  m_LocalPosition: {x: -0.16, y: -0.936, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 791855823268327752}

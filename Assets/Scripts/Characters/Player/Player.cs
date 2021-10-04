@@ -19,6 +19,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
     [SerializeField] private float pushAngle = 20f;
     [SerializeField] private Animator animator;
     [SerializeField] private GameEvent<bool> gamePauseEvent;
+    [SerializeField] private Color damagedColor;
     private bool isSad = true;
     
     private void Start() 
@@ -100,7 +101,9 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
 
     public void OnDamage(float damage)
     {
+        StartCoroutine("OnDamageCoroutine");
         playerHealth.ApplyDamage(damage);
+        playerSFX.PlayHitSFX();
     }
 
     public void onCryStateChanged(bool cryState)
@@ -150,5 +153,19 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
     public void OnPush(Vector2 pushImpulse)
     {
         GetComponent<Rigidbody2D>().AddForce(pushImpulse, ForceMode2D.Impulse);
+    }
+
+    IEnumerator OnDamageCoroutine()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        float ElapsedTime = 0.0f;
+        float TotalTime = 0.2f;
+        while (ElapsedTime < TotalTime) 
+        {
+            ElapsedTime += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(damagedColor, Color.white, (ElapsedTime / TotalTime));
+            yield return null;
+        }
     }
 }
