@@ -14,6 +14,9 @@ public class Boss : MonoBehaviour, IDamageable
     [SerializeField] private AudioSource bossAudioSource;
     [SerializeField] private List<AudioClip> laughAudioClips;
     [SerializeField] private List<AudioClip> damagedAudioClips;
+    [SerializeField] private List<AudioClip> screamAudioClips;
+    [SerializeField] private AudioClip deathAudioClip;
+
     [SerializeField] private Color damagedColor;
 
     private string[] actionList = {
@@ -54,6 +57,16 @@ public class Boss : MonoBehaviour, IDamageable
     {
         bossAudioSource.PlayOneShot(damagedAudioClips[Random.Range(0, damagedAudioClips.Count)]);
     }
+    public void ScreamSFX()
+    {
+        bossAudioSource.PlayOneShot(screamAudioClips[Random.Range(0, screamAudioClips.Count)]);
+    }
+
+    public void DeathSFX()
+    {
+        bossAudioSource.PlayOneShot(deathAudioClip);
+    }
+
     public void OnDamage(float damage)
     {
         health -= damage;

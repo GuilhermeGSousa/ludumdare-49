@@ -9726,7 +9726,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: LaughSFX
+    functionName: ScreamSFX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3427118577316049914}
   - component: {fileID: 371150685016613840}
   - component: {fileID: 5468494983756482789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FluidTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushImpulse: 1
-  damageAmount: 0.1
-  effectOdds: 50
+  damageAmount: 0.5
+  effectOdds: 30
 --- !u!1 &4856357394002456203
 GameObject:
   m_ObjectHideFlags: 0

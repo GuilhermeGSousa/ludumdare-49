@@ -27,6 +27,7 @@ public class Tear : MonoBehaviour
 
         Enemy enemy = other.GetComponent<Enemy>();
         Boss boss = other.GetComponent<Boss>();
+
         if(enemy)
         {
             enemy.SetSlow(true);
@@ -46,7 +47,7 @@ public class Tear : MonoBehaviour
             int rng =  Random.Range(0, 100);
             
             if(effectOdds < rng) return;
-
+            
             boss.OnDamage(damageAmount);
             Destroy(gameObject);
         }

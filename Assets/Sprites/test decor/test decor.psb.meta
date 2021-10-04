@@ -1,0 +1,909 @@
+fileFormatVersion: 2
+guid: f44b69a2f5b30154898d1d433b4bb7b1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 20
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 150
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: plan1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 7880
+      height: 3807
+    spriteID: aad32aacad0ed1b43a9e23598f03a20e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: plan2 chaise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7056
+      y: 13656
+      width: 817
+      height: 456
+    spriteID: 6c479690f1c2d994fb9e1aa2a28e705d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 129, y: 13151}
+  - name: plan2 poubelle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15780
+      y: 4
+      width: 201
+      height: 267
+    spriteID: cce628c13da84b54ea6b2f173f267e13
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 9305, y: -500}
+  - name: plan2 table
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7892
+      y: 521
+      width: 1560
+      height: 344
+    spriteID: 9f9be55450dd469499f14104a0e3f42d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3091, y: 12}
+  - name: plan2 distributeur
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6172
+      y: 14928
+      width: 635
+      height: 1301
+    spriteID: 0fe13dbc12d350d42ad3f502b9a84d75
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 6124, y: 14426}
+  - name: plan2 balle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15989
+      y: 4
+      width: 138
+      height: 136
+    spriteID: 634c021127587284cbd34418199c96fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 13472, y: -503}
+  - name: plan2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7892
+      y: 4
+      width: 7880
+      height: 509
+    spriteID: 70901376164cb7f4186fee29b33ce878
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 7892, y: 4}
+  - name: plan3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 11002
+      width: 7880
+      height: 2632
+    spriteID: 7c23459dea0a0ba4a862bedd91ff12c7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 11002}
+  - name: plan 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7634
+      width: 7880
+      height: 3360
+    spriteID: d2c24dd06831cea459dff9c66515b16f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 7634}
+  - name: plan 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4266
+      y: 13660
+      width: 2784
+      height: 1268
+    spriteID: 5f2d9fc8a9dddde49ac114875a8e12a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1464, y: 13216}
+  - name: plan 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4266
+      y: 14935
+      width: 1903
+      height: 1300
+    spriteID: e72913cfc8d34de4fb98b32fbc1041d7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 857, y: 14455}
+  - name: plan 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 13660
+      width: 4254
+      height: 2479
+    spriteID: 55be7b8c719924d469600c2538e6f142
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2323, y: 13343}
+  - name: plan 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3819
+      width: 7880
+      height: 3807
+    spriteID: de9e30c9f735bb0499785eb83dc2b0e7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3819}
+  rigSpriteImportData:
+  - name: plan1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 7880
+      height: 3807
+    spriteID: e30091fda6cb0d44198e703af82ed104
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: plan2 chaise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7058
+      y: 13660
+      width: 815
+      height: 452
+    spriteID: 7c1525177351ff34190277caea865355
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 129, y: 13151}
+  - name: plan2 poubelle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15780
+      y: 4
+      width: 201
+      height: 267
+    spriteID: 96690a80e842e5b41bcde5dce77ed9e5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 9305, y: -500}
+  - name: plan2 table
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7892
+      y: 521
+      width: 1560
+      height: 344
+    spriteID: dbdcf426f794abb46b76a6fc2c5c0fdd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3091, y: 12}
+  - name: plan2 distributeur
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6178
+      y: 14935
+      width: 629
+      height: 1294
+    spriteID: 560729796bda1dc4ab5ab0a0afec7079
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 6124, y: 14426}
+  - name: plan2 balle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15989
+      y: 4
+      width: 138
+      height: 136
+    spriteID: f18049fa9f50f3b4c86f29ef6537f550
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 13472, y: -503}
+  - name: plan2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7892
+      y: 4
+      width: 7880
+      height: 509
+    spriteID: 0825676d3026e9849826a951ec2d35ab
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 7892, y: 4}
+  - name: plan3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 11002
+      width: 7880
+      height: 2650
+    spriteID: c5799685727cdf445a42ee5b42045e89
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 11002}
+  - name: plan 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7634
+      width: 7880
+      height: 3360
+    spriteID: a7e62f2d8395485438579a1a32bfba9d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 7634}
+  - name: plan 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4266
+      y: 13660
+      width: 2784
+      height: 1267
+    spriteID: 46450649301703049a4d29c3eb536a0f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1464, y: 13216}
+  - name: plan 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4266
+      y: 14935
+      width: 1904
+      height: 1300
+    spriteID: fca863dc4eabc7847a305ef23daa7413
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 857, y: 14455}
+  - name: plan 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 13660
+      width: 4254
+      height: 2479
+    spriteID: 9550fa665e51620429a04dab83d1cb27
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2323, y: 13343}
+  - name: plan 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3819
+      width: 7880
+      height: 3807
+    spriteID: 636cf6c197651d04998d2e4bc6dcfce7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3819}
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 7880, y: 3807}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 16384
+  textureActualHeight: 16384
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 0
+  mosaicPSDLayers:
+  - name: plan1
+    spriteName: plan1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: aad32aacad0ed1b43a9e23598f03a20e
+    layerID: 10
+    mosaicPosition: {x: 4, y: 4}
+  - name: plan2 chaise
+    spriteName: plan2 chaise
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6c479690f1c2d994fb9e1aa2a28e705d
+    layerID: 14
+    mosaicPosition: {x: 7058, y: 13660}
+  - name: plan2 poubelle
+    spriteName: plan2 poubelle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cce628c13da84b54ea6b2f173f267e13
+    layerID: 13
+    mosaicPosition: {x: 15780, y: 4}
+  - name: plan2 table
+    spriteName: plan2 table
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f9be55450dd469499f14104a0e3f42d
+    layerID: 12
+    mosaicPosition: {x: 7892, y: 521}
+  - name: plan2 distributeur
+    spriteName: plan2 distributeur
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0fe13dbc12d350d42ad3f502b9a84d75
+    layerID: 16
+    mosaicPosition: {x: 6178, y: 14935}
+  - name: plan2 balle
+    spriteName: plan2 balle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 634c021127587284cbd34418199c96fc
+    layerID: 15
+    mosaicPosition: {x: 15989, y: 4}
+  - name: plan2
+    spriteName: plan2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 70901376164cb7f4186fee29b33ce878
+    layerID: 11
+    mosaicPosition: {x: 7892, y: 4}
+  - name: plan3
+    spriteName: plan3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7c23459dea0a0ba4a862bedd91ff12c7
+    layerID: 17
+    mosaicPosition: {x: 4, y: 11002}
+  - name: plan 4
+    spriteName: plan 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d2c24dd06831cea459dff9c66515b16f
+    layerID: 18
+    mosaicPosition: {x: 4, y: 7634}
+  - name: plan 5
+    spriteName: plan 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5f2d9fc8a9dddde49ac114875a8e12a4
+    layerID: 19
+    mosaicPosition: {x: 4266, y: 13660}
+  - name: plan 6
+    spriteName: plan 6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e72913cfc8d34de4fb98b32fbc1041d7
+    layerID: 20
+    mosaicPosition: {x: 4266, y: 14935}
+  - name: plan 7
+    spriteName: plan 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 55be7b8c719924d469600c2538e6f142
+    layerID: 21
+    mosaicPosition: {x: 4, y: 13660}
+  - name: plan 8
+    spriteName: plan 8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: de9e30c9f735bb0499785eb83dc2b0e7
+    layerID: 24
+    mosaicPosition: {x: 4, y: 3819}
+  rigPSDLayers:
+  - name: plan1
+    spriteName: plan1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e30091fda6cb0d44198e703af82ed104
+    layerID: 10
+    mosaicPosition: {x: 4, y: 4}
+  - name: plan2 chaise
+    spriteName: plan2 chaise
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7c1525177351ff34190277caea865355
+    layerID: 14
+    mosaicPosition: {x: 7058, y: 13660}
+  - name: plan2 poubelle
+    spriteName: plan2 poubelle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96690a80e842e5b41bcde5dce77ed9e5
+    layerID: 13
+    mosaicPosition: {x: 15780, y: 4}
+  - name: plan2 table
+    spriteName: plan2 table
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dbdcf426f794abb46b76a6fc2c5c0fdd
+    layerID: 12
+    mosaicPosition: {x: 7892, y: 521}
+  - name: plan2 distributeur
+    spriteName: plan2 distributeur
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 560729796bda1dc4ab5ab0a0afec7079
+    layerID: 16
+    mosaicPosition: {x: 6178, y: 14935}
+  - name: plan2 balle
+    spriteName: plan2 balle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f18049fa9f50f3b4c86f29ef6537f550
+    layerID: 15
+    mosaicPosition: {x: 15989, y: 4}
+  - name: plan2
+    spriteName: plan2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0825676d3026e9849826a951ec2d35ab
+    layerID: 11
+    mosaicPosition: {x: 7892, y: 4}
+  - name: plan3
+    spriteName: plan3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c5799685727cdf445a42ee5b42045e89
+    layerID: 17
+    mosaicPosition: {x: 4, y: 11002}
+  - name: plan 4
+    spriteName: plan 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a7e62f2d8395485438579a1a32bfba9d
+    layerID: 18
+    mosaicPosition: {x: 4, y: 7634}
+  - name: plan 5
+    spriteName: plan 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 46450649301703049a4d29c3eb536a0f
+    layerID: 19
+    mosaicPosition: {x: 4266, y: 13660}
+  - name: plan 6
+    spriteName: plan 6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fca863dc4eabc7847a305ef23daa7413
+    layerID: 20
+    mosaicPosition: {x: 4266, y: 14935}
+  - name: plan 7
+    spriteName: plan 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9550fa665e51620429a04dab83d1cb27
+    layerID: 21
+    mosaicPosition: {x: 4, y: 13660}
+  - name: plan 8
+    spriteName: plan 8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 636cf6c197651d04998d2e4bc6dcfce7
+    layerID: 24
+    mosaicPosition: {x: 4, y: 3819}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: test decor Texture
+  prefabAssetName: test decor Prefab
+  spriteLibAssetName: test decor Sprite Lib
+  secondarySpriteTextures: []

@@ -21,7 +21,8 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
     [SerializeField] private GameEvent<bool> gamePauseEvent;
     [SerializeField] private Color damagedColor;
     private bool isSad = true;
-    
+    [SerializeField] private Color angryColor;
+    Color currentColor;
     private void Start() 
     {
         animator.GetComponent<Animator>();
@@ -112,12 +113,16 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
         if(cryState)
         {
             if(!isSad) animator.SetTrigger("onSad");
+            currentColor = Color.white;
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
         else
         {
             animator.SetBool("isCrying", false);
             animator.SetTrigger("onAngry");
             playerSFX.StopCry();
+            GetComponent<SpriteRenderer>().color = angryColor;
+            currentColor = angryColor;
         }
 
         isSad = cryState;
@@ -164,7 +169,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
         while (ElapsedTime < TotalTime) 
         {
             ElapsedTime += Time.deltaTime;
-            spriteRenderer.color = Color.Lerp(damagedColor, Color.white, (ElapsedTime / TotalTime));
+            spriteRenderer.color = Color.Lerp(damagedColor, currentColor, (ElapsedTime / TotalTime));
             yield return null;
         }
     }

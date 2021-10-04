@@ -135,7 +135,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -203,7 +203,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -316,8 +316,8 @@ MonoBehaviour:
   - {fileID: 5111631745036227785}
   - {fileID: 5111631745787319357}
   m_Bounds:
-    m_Center: {x: 3.331098, y: 3.3074267, z: 0}
-    m_Extent: {x: 3.7405164, y: 3.7193353, z: 0}
+    m_Center: {x: -0.7777679, y: 4.4681954, z: 0}
+    m_Extent: {x: 1.2385757, y: 4.8826094, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744297969626
@@ -380,7 +380,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -493,8 +493,8 @@ MonoBehaviour:
   - {fileID: 5111631744042553626}
   - {fileID: 5111631744706178379}
   m_Bounds:
-    m_Center: {x: 3.268513, y: 3.3674216, z: 0}
-    m_Extent: {x: 3.6796827, y: 3.7764637, z: 0}
+    m_Center: {x: 4.2045207, y: -0.8379481, z: 0}
+    m_Extent: {x: 4.5319023, y: 1.3249772, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5111631744412638099
@@ -557,7 +557,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -625,7 +625,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -693,7 +693,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -935,7 +935,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4c8ddae2f55e05b4fb1fd0f6a9dc899e, type: 3}
   - {fileID: 8300000, guid: b5072c2d09ebf1a4e8b057d4eed61fa7, type: 3}
   - {fileID: 8300000, guid: 012c1f69cf58ab54e9feac3870c38ccb, type: 3}
-  damagedColor: {r: 0.8301887, g: 0.25516164, b: 0.06657174, a: 0}
+  screamAudioClips:
+  - {fileID: 8300000, guid: 70777550fd9f0b4418bf54a289a2bdb4, type: 3}
+  - {fileID: 8300000, guid: 79218b5ce5f5cd3479b12872dc778503, type: 3}
+  deathAudioClip: {fileID: 8300000, guid: 3e573d03d6d841d46aaf00f8e4a25a25, type: 3}
+  damagedColor: {r: 0.8301887, g: 0.25516164, b: 0.06657174, a: 1}
 --- !u!114 &5353720968564126177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,13 +961,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5111631744670974862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.30096367, y: 2.8333755}
+  m_Offset: {x: -0.30096364, y: 3.383502}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -974,7 +978,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3886046, y: 6.7795477}
+  m_Size: {x: 2.3886046, y: 5.6792946}
   m_EdgeRadius: 0
 --- !u!1 &5111631744706178378
 GameObject:
@@ -1035,7 +1039,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -1103,7 +1107,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -1171,7 +1175,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -1307,7 +1311,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -1374,7 +1378,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0

@@ -9,7 +9,7 @@ public class BossDeathListener : MonoBehaviour, IEventListener
 
     public void OnEventRaised()
     {
-        sceneSwitcher.SwitchScene("End Cutscene");
+        sceneSwitcher.SwitchScene("End Scene");
     }
 
     private void OnEnable() {

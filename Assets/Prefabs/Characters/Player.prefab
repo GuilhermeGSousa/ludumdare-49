@@ -124,7 +124,8 @@ MonoBehaviour:
   pushAngle: 45
   animator: {fileID: 4673305345000170293}
   gamePauseEvent: {fileID: 11400000, guid: 732fdba007cdc5b4b81b63f9021fa1ec, type: 2}
-  damagedColor: {r: 0, g: 0, b: 0, a: 0}
+  damagedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
+  angryColor: {r: 0.99215686, g: 0.4627451, b: 0.4627451, a: 1}
 --- !u!114 &791855823268327757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ MonoBehaviour:
   walkSpeed: 5
   maxPlayerXSpeed: 20
   maxPlayerYSpeed: 50
-  jumpHeight: 4
+  jumpHeight: 5
 --- !u!114 &8513039569993303764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,15 +288,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cryRecoverRate: 0.1
-  cryConsumeRate: 0.1
+  cryRecoverRate: 0.05
+  cryConsumeRate: 0.2
   onCryEvent: {fileID: 11400000, guid: 5a5708fee272f7543acf84fe37d1a3a3, type: 2}
   pointLeft: {fileID: 7344801581504670639}
   pointRight: {fileID: 6155217155810658983}
   initialTearSpeed: 3
   tearPrefab: {fileID: 4856357394002456203, guid: 008db561403718243a653a726bad327d, type: 3}
   tearRate: 30
-  cryThrust: 10
+  cryThrust: 0
 --- !u!114 &423672994712965649
 MonoBehaviour:
   m_ObjectHideFlags: 0
