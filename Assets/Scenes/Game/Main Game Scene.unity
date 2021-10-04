@@ -1355,11 +1355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283918575345204093, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: cryConsumeRate
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7283918575345204093, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: cryRecoverRate
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7283918575345204093, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: onCryStateChanged.m_PersistentCalls.m_Calls.Array.size

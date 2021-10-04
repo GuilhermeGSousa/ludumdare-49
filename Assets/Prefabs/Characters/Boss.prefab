@@ -922,7 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDamagedEvent: {fileID: 11400000, guid: a61ac37085bd8a144b4a328f43f696c0, type: 2}
   onDeath: {fileID: 11400000, guid: 4a588a88b6724fc4881810ab1a4c869b, type: 2}
-  maxHealth: 20
+  maxHealth: 10
   goonPrefab: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
   spitPoint: {fileID: 936494003517465858}
   spitInitialVelocity: 8
