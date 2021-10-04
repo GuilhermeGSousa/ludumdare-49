@@ -8,13 +8,20 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
 {
     [SerializeField] private float health = 5f;
     [SerializeField] private float speed  = 3f;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius;
+
     private float currentSpeed;
     [SerializeField] private float minDistanceToPlayer = 0.1f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float groundCheckRadius = 0.08f;
+    [SerializeField] private float attackDamage = 2f;
+    [SerializeField] private float pushImpulse = 2f;
+    [SerializeField] private float pushAngle = 20f;
     [SerializeField] private UnityEvent onDeath;
     private Rigidbody2D rb;
+    private Animator animator;
     private GameObject player;
     private bool isFlipped = false;
     private bool isGrounded = false;
@@ -26,6 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         currentSpeed = speed;
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +46,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayerMask);
+
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     private void PursueTarget()
@@ -48,7 +58,36 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
 
         if(!isCloseToPlayer)
         {
-            transform.position += transform.right * (isSlowed ? speed * 0.5f : speed) * Time.deltaTime;   
+            transform.position += transform.right * (isSlowed ? speed * 0.5f : speed) * Time.deltaTime;
+            animator.SetBool("isRunning", true); 
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+
+            animator.SetTrigger("onAttack");
+        }
+    }
+
+    public void Attack()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
+
+        foreach (var collider in colliders)
+        {
+            if(collider.CompareTag("Enemy")) continue;
+
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+            IPushable pushable = collider.GetComponent<IPushable>();
+
+            if(damageable is IDamageable) 
+            {
+                damageable.OnDamage(attackDamage);
+            }
+            if(pushable is IPushable)
+            {
+                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Sin(pushAngle), Mathf.Cos(pushAngle)) * pushImpulse);
+            } 
         }
     }
 
@@ -69,12 +108,13 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     public void OnDamage(float damage)
     {
         health -= damage;
-
+        animator.SetTrigger("onDamaged");
         
         StartCoroutine("OnDamageCoroutine");
 
         if(health <= 0) 
         {
+            animator.SetTrigger("onDeath");
             onDeath.Invoke();
             Destroy(gameObject);
         }
@@ -96,7 +136,12 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         if(groundCheck)
         {
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }        
+        }
+
+        if(attackPoint)
+        {
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
     }
 
     IEnumerator OnDamageCoroutine()
@@ -108,7 +153,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         while (ElapsedTime < TotalTime) 
         {
             ElapsedTime += Time.deltaTime;
-            spriteRenderer.color = Color.Lerp(Color.red, Color.white, (ElapsedTime / TotalTime));
+            //spriteRenderer.color = Color.Lerp(Color.red, Color.white, (ElapsedTime / TotalTime));
             yield return null;
         }
     }

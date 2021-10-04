@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &346855286098268963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3735941810640248568}
+  m_Layer: 9
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3735941810640248568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346855286098268963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.99, y: 0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 915103619787888464}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4120507435921247422
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,9 +44,10 @@ GameObject:
   - component: {fileID: 4972966234805803839}
   - component: {fileID: 7247348300186054045}
   - component: {fileID: 6148713767308953331}
+  - component: {fileID: 26933346117754138}
   m_Layer: 9
   m_Name: Goon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +64,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7067138669942616922}
+  - {fileID: 3735941810640248568}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,12 +180,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   speed: 3
+  attackPoint: {fileID: 3735941810640248568}
+  attackRadius: 0
   minDistanceToPlayer: 1
   groundCheck: {fileID: 7067138669942616922}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
   groundCheckRadius: 0.08
+  attackDamage: 0.25
+  pushImpulse: 2
+  pushAngle: 20
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -182,6 +219,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 503282956174453930, guid: d462801742a27c341b5b65bc53a6d1e6, type: 3}
+--- !u!95 &26933346117754138
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120507435921247422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56097c740f60a3049b3e0416b0725154, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4621841502817544104
 GameObject:
   m_ObjectHideFlags: 0

@@ -236,7 +236,7 @@ MonoBehaviour:
   jumpType: 0
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   groundCheck: {fileID: 791855825212191612}
   groundCheckRadius: 0.56
   frontWallCheck: {fileID: 791855824333966110}
