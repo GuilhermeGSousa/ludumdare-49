@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tear : MonoBehaviour
 {
     [SerializeField] private float pushImpulse = 1f;
+    [SerializeField] private float damageAmount = 1f;
     [Range(0, 100)]
     [SerializeField] private int effectOdds = 1;
 
@@ -25,20 +26,31 @@ public class Tear : MonoBehaviour
         if(other.CompareTag("Player")) return;
 
         Enemy enemy = other.GetComponent<Enemy>();
-        if(enemy) enemy.SetSlow(true);
-
-        int rng =  Random.Range(0, 100);
-        
-        if(effectOdds < rng) return;
-
-        IPushable pushable = other.GetComponent<IPushable>();
-
-        if(pushable is IPushable)
+        Boss boss = other.GetComponent<Boss>();
+        if(enemy)
         {
+            enemy.SetSlow(true);
+
+            int rng =  Random.Range(0, 100);
+            
+            if(effectOdds < rng) return;
+
+            enemy.OnDamage(damageAmount);
             Vector2 pushImpulseVector = (other.transform.position - transform.position).normalized * pushImpulse;
-            pushable.OnPush(pushImpulseVector);
-            Destroy(transform.gameObject);
+            enemy.OnPush(pushImpulseVector);
+            Destroy(gameObject);
         }
+
+        if(boss)
+        {
+            int rng =  Random.Range(0, 100);
+            
+            if(effectOdds < rng) return;
+
+            boss.OnDamage(damageAmount);
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other) 

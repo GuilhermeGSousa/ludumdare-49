@@ -60,8 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6fce493b06e5d34aa70ce4b2cf8d909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushImpulse: 5
-  effectOdds: 1
+  pushImpulse: 1
+  damageAmount: 0.1
+  effectOdds: 50
 --- !u!1 &4856357394002456203
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,4 +198,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e77fe7ace19c9c46b1d854c8d8e0342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 20
+  lifeTime: 5
