@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerCameraShaker : MonoBehaviour
 {
-    public float shakeTime = 0.5f;
-    public float shakeIntensity = 5f;
+    public CinemachineImpulseSource impulseSource;
+    
     public void Shake()
     {
-        CameraShake.Instance.ShakeCamera(shakeIntensity, shakeTime);
+        impulseSource.GenerateImpulse();
     }
 }

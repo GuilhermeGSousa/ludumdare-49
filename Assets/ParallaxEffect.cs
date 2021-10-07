@@ -22,11 +22,12 @@ public class ParallaxEffect : MonoBehaviour
             
             float screenSpeed = (transform.position.x - lastScreenPosition.x);
 
-            float parallaxSpeed = -1f * screenSpeed * parallaxCoeficient / distanceToCamera;
+            float parallaxSpeed = screenSpeed * Mathf.Abs(1 / layer.transform.position.z);
 
             layer.transform.Translate(Vector3.right * parallaxSpeed, Space.World);
         }
 
         lastScreenPosition = transform.position;
     }
+
 }
