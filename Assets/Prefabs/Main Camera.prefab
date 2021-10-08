@@ -126,9 +126,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3641987292590090596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17d04e976a46bb4ca3fb560ec7740d1, type: 3}
+  m_Script: {fileID: 11500000, guid: eadab3a44a94d8c4592f679fc406ad21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxCoeficient: 1
+  backgroundLayers: []
 --- !u!114 &5024714508440741135
 MonoBehaviour:
   m_ObjectHideFlags: 0

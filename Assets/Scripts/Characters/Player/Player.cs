@@ -82,7 +82,7 @@ public class Player : MonoBehaviour, IDamageable, IEventListener<bool>, IPushabl
             }
             if(pushable is IPushable)
             {
-                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Sin(pushAngle), Mathf.Cos(pushAngle)) * pushImpulse);
+                pushable.OnPush(new Vector2(Mathf.Sign(transform.right.x) * Mathf.Cos(pushAngle), Mathf.Sin(pushAngle)) * pushImpulse);
             } 
         }
     }

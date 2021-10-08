@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         bool isCloseToPlayer = Mathf.Abs(playerDirection.x) < minDistanceToPlayer;
         if(Mathf.Sign(playerDirection.x) > 0 && isFlipped || Mathf.Sign(playerDirection.x) < 0 && !isFlipped) Flip();
 
-        if(!isCloseToPlayer)
+        if(!isCloseToPlayer && health > 0f)
         {
             transform.position += transform.right * (isSlowed ? speed * 0.5f : speed) * Time.deltaTime;
             animator.SetBool("isRunning", true); 
@@ -115,9 +115,12 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
         if(health <= 0) 
         {
             animator.SetTrigger("onDeath");
-            onDeath.Invoke();
-            Destroy(gameObject);
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     public void SetSlow(bool isSlow)

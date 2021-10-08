@@ -121,8 +121,8 @@ MonoBehaviour:
   attackPoint: {fileID: 8157898030927303709}
   attackRadius: 0.73
   attackDamage: 1
-  pushImpulse: 8
-  pushAngle: 45
+  pushImpulse: 3
+  pushAngle: 0
   animator: {fileID: 4673305345000170293}
   gamePauseEvent: {fileID: 11400000, guid: 732fdba007cdc5b4b81b63f9021fa1ec, type: 2}
   damagedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: ad3ee5855f305ed4e93d41b2a73f41ba, type: 2}
-    m_AmplitudeGain: 10
+    m_AmplitudeGain: 3
     m_FrequencyGain: 1
     m_RepeatMode: 0
     m_Randomize: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_AttackTime: 0
-      m_SustainTime: 0.1
+      m_SustainTime: 0.05
       m_DecayTime: 0.7
       m_ScaleWithImpact: 1
       m_HoldForever: 0
