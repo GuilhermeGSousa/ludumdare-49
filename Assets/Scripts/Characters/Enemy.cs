@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     [SerializeField] private float pushImpulse = 2f;
     [SerializeField] private float pushAngle = 20f;
     [SerializeField] private UnityEvent onDeath;
+    [SerializeField] private GameObject bloodPrefab;
     private Rigidbody2D rb;
     private Animator animator;
     private GameObject player;
@@ -126,6 +127,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPushable
     public void SetSlow(bool isSlow)
     {
         isSlowed = isSlow;
+    }
+
+    public void EmitBlood()
+    {
+        Instantiate(bloodPrefab, transform.position, transform.rotation);
     }
     
 

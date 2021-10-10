@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 6923235160704796151}
   - component: {fileID: 4972966234805803839}
   - component: {fileID: 7247348300186054045}
-  - component: {fileID: 6148713767308953331}
   - component: {fileID: 26933346117754138}
   m_Layer: 9
   m_Name: Goon
@@ -194,7 +193,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6148713767308953331}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Instantiator, Assembly-CSharp
         m_MethodName: InstantiatePrefab
         m_Mode: 1
@@ -206,19 +205,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6148713767308953331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4120507435921247422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83d5f97e24541e4fb939aad3e88e4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 503282956174453930, guid: d462801742a27c341b5b65bc53a6d1e6, type: 3}
+  bloodPrefab: {fileID: 3839572014121140257, guid: f84e5a9bda95964428f2a5cbaf1a99b7, type: 3}
 --- !u!95 &26933346117754138
 Animator:
   serializedVersion: 3

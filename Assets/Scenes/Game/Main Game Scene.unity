@@ -1112,7 +1112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
@@ -1374,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
@@ -1531,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8816136509172042054, guid: 082efea8ef14d5341b9dd4604e0d5aee, type: 3}
       propertyPath: orthographic size
-      value: 7.10625
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 8816136509172042055, guid: 082efea8ef14d5341b9dd4604e0d5aee, type: 3}
       propertyPath: m_RootOrder
@@ -1539,11 +1539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8816136509172042055, guid: 082efea8ef14d5341b9dd4604e0d5aee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13500023
+      value: -0.9150002
       objectReference: {fileID: 0}
     - target: {fileID: 8816136509172042055, guid: 082efea8ef14d5341b9dd4604e0d5aee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.775
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 8816136509172042055, guid: 082efea8ef14d5341b9dd4604e0d5aee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1810,7 +1810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3641987293929469538, guid: 60b83527fa16d2244b02cb1e1f8bdadf, type: 3}
       propertyPath: orthographic size
-      value: 7.10625
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 3641987293929469539, guid: 60b83527fa16d2244b02cb1e1f8bdadf, type: 3}
       propertyPath: m_RootOrder
@@ -1818,11 +1818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3641987293929469539, guid: 60b83527fa16d2244b02cb1e1f8bdadf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13500023
+      value: -0.91499996
       objectReference: {fileID: 0}
     - target: {fileID: 3641987293929469539, guid: 60b83527fa16d2244b02cb1e1f8bdadf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.775
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 3641987293929469539, guid: 60b83527fa16d2244b02cb1e1f8bdadf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2023,7 +2023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120507435921247422, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00506336d2c75645acb4853dd3ea4d1, type: 3}
@@ -2126,11 +2126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 791855823268327752, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: 791855823268327752, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.27
+      value: 7.83
       objectReference: {fileID: 0}
     - target: {fileID: 791855823268327752, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2183,10 +2183,6 @@ PrefabInstance:
     - target: {fileID: 791855823268327757, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7283918575345204093, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
-      propertyPath: cryConsumeRate
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7283918575345204093, guid: 0e6aecbe5c5f2024db82df419eeef75d, type: 3}
       propertyPath: onCryStateChanged.m_PersistentCalls.m_Calls.Array.size
